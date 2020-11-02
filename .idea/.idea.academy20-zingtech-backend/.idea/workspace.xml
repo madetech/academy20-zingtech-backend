@@ -8,7 +8,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="" />
+    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +21,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1jjMQs3iEz1nYyWkkY2jkIA2OSF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -24,12 +35,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.academy20-zingtech-backend: academy20_zingtech_backend">
+  <component name="RunManager" selected="Docker.academy20-zingtech-backend/Dockerfile">
     <configuration name="academy20-zingtech-backend: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/academy20-zingtech-backend/academy20-zingtech-backend.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -60,6 +72,19 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="academy20-zingtech-backend/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="academy20-zingtech-backend/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.academy20-zingtech-backend/Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604313034997</updated>
-      <workItem from="1604313040447" duration="783000" />
+      <workItem from="1604313040447" duration="2824000" />
     </task>
     <servers />
   </component>
@@ -93,21 +118,25 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1124" height="267" key="GridCell.Tab.0.bottom" timestamp="1604313127023">
+    <state width="558" height="270" key="GridCell.Tab.0.bottom" timestamp="1604315119702">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
-    <state width="1124" height="267" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127023" />
-    <state width="1124" height="267" key="GridCell.Tab.0.center" timestamp="1604313127022">
+    <state width="558" height="270" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119702" />
+    <state width="558" height="270" key="GridCell.Tab.0.center" timestamp="1604315119701">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
-    <state width="1124" height="267" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127022" />
-    <state width="1124" height="267" key="GridCell.Tab.0.left" timestamp="1604313127022">
+    <state width="558" height="270" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119701" />
+    <state width="558" height="270" key="GridCell.Tab.0.left" timestamp="1604315119701">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
-    <state width="1124" height="267" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127022" />
-    <state width="1124" height="267" key="GridCell.Tab.0.right" timestamp="1604313127023">
+    <state width="558" height="270" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119701" />
+    <state width="558" height="270" key="GridCell.Tab.0.right" timestamp="1604315119702">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
-    <state width="1124" height="267" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127023" />
+    <state width="558" height="270" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119702" />
+    <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size" timestamp="1604313836535">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313836535" />
   </component>
 </project>
