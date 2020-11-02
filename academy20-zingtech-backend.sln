@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "academy20-zingtech-backend", "academy20-zingtech-backend\academy20-zingtech-backend.csproj", "{3801E36B-F30C-429F-A16C-44A33A5024DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3801E36B-F30C-429F-A16C-44A33A5024DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3801E36B-F30C-429F-A16C-44A33A5024DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3801E36B-F30C-429F-A16C-44A33A5024DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3801E36B-F30C-429F-A16C-44A33A5024DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
