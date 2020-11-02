@@ -10,5 +10,15 @@
     
      steps:
        - checkout
-       - run: dotnet build
+       - run:
+           name: Restore
+           command: dotnet restore
+           working_directory: /app
+       - run: 
+           name: Build
+           command: dotnet build
+           working_directory: /app
+       - setup_remote_docker:
+          docker_layer_caching: true
+       
 
