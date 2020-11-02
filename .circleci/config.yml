@@ -18,7 +18,7 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1
-    working_directory: ~/academy20-zingtech-backend/academy20-zingtech-backend
+#    working_directory: ~/academy20-zingtech-backend/academy20-zingtech-backend
     steps:
       - checkout
       # Bundle install dependencies
@@ -33,4 +33,4 @@ jobs:
       - run:
           name: Run app
           command: 
-            dotnet run
+            dotnet academy20-zingtech-backend.dll
