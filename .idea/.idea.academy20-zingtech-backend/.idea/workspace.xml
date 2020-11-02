@@ -8,18 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/academy20-zingtech-backend.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" afterDir="false" />
-    </list>
+    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.academy20-zingtech-backend: academy20_zingtech_backend">
@@ -79,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604313034997</updated>
-      <workItem from="1604313040447" duration="34000" />
+      <workItem from="1604313040447" duration="783000" />
     </task>
     <servers />
   </component>
@@ -101,5 +91,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1124" height="267" key="GridCell.Tab.0.bottom" timestamp="1604313127023">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="1124" height="267" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127023" />
+    <state width="1124" height="267" key="GridCell.Tab.0.center" timestamp="1604313127022">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="1124" height="267" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127022" />
+    <state width="1124" height="267" key="GridCell.Tab.0.left" timestamp="1604313127022">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="1124" height="267" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127022" />
+    <state width="1124" height="267" key="GridCell.Tab.0.right" timestamp="1604313127023">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="1124" height="267" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313127023" />
   </component>
 </project>
