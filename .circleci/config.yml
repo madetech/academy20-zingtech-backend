@@ -7,9 +7,9 @@ workflows:
   heroku_deploy:
     jobs:
       - build
-#      - push-docker-image: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
-#        requires:
-#          - build
+      - push-docker-image: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          requires:
+            - build
 #          filters:
 #            branches:
 #              only: sequential-branch-filter
@@ -23,14 +23,14 @@ jobs:
       - checkout
       # Bundle install dependencies
       - run:
-        name: Restore packages
-        command: 
-          dotnet restore
+          name: Restore packages
+          command: 
+            dotnet restore
       - run:
-        name: Build App
-        command: 
-          dotnet build
+          name: Build App
+          command: 
+            dotnet build
       - run:
-        name: Run app
-        command: 
-          dotnet run
+          name: Run app
+          command: 
+            dotnet run
