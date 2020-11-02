@@ -18,7 +18,7 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1
-#    working_directory: ~/circleci-demo-workflows
+    working_directory: ~/academy20-zingtech-backend
     steps:
       - checkout
       # Bundle install dependencies
