@@ -5,7 +5,8 @@
 
  jobs:
    build:
-     executor: win/default     
+     docker:
+       - image: zackads/hmrc-hr  
     
      steps:
        - checkout

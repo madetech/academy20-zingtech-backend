@@ -9,9 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" />
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
       </list>
     </option>
   </component>
@@ -39,6 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Docker.academy20-zingtech-backend/Dockerfile">
@@ -171,9 +172,17 @@
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
     <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313836535" />
+    <state x="2141" y="280" key="SettingsEditor" timestamp="1604327121754">
+      <screen x="1920" y="203" width="1440" height="877" />
+    </state>
+    <state x="2141" y="280" key="SettingsEditor/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604327121754" />
     <state x="765" y="340" width="534" height="218" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1604317754823">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="765" y="340" width="534" height="218" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317754823" />
+    <state x="2253" y="274" width="774" height="735" key="find.popup" timestamp="1604327062406">
+      <screen x="1920" y="203" width="1440" height="877" />
+    </state>
+    <state x="2253" y="274" width="774" height="735" key="find.popup/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604327062406" />
   </component>
 </project>
