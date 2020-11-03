@@ -17,7 +17,8 @@ workflows:
 
 jobs:
   deploy:
-    machine: true
+    docker:
+      - image: mcr.microsoft.com/dotnet/core/sdk:3.1
     steps:
       - setup_remote_docker:
           version: 19.03.13
