@@ -6,8 +6,6 @@ orbs:
 workflows:
     heroku_deploy:
       jobs:
-        - setup_remote_docker:
-            version: 19.03.13
         - build
         - heroku/push-docker-image: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
             requires:
