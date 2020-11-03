@@ -7,11 +7,11 @@ namespace academy20_zingtech_backend.Controllers
 {
     [Route("api/[controller]")]     
     [ApiController]     
-    public class TodoController : ControllerBase     
+    public class EmployeeDataController : ControllerBase     
     {        
         private readonly EmployeeDatumContext _context;
 
-        public TodoController(EmployeeDatumContext context)
+        public EmployeeDataController(EmployeeDatumContext context)
         {
             _context = context;
             if (_context.EmployeeData.Count() == 0)
