@@ -33,4 +33,4 @@ jobs:
       - run:
           name: Run app
           command: 
-            dotnet academy20-zingtech-backend.dll
+            dotnet run --project academy20-zingtech-backend
