@@ -9,7 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604313034997</updated>
       <workItem from="1604313040447" duration="2824000" />
+      <workItem from="1604393727716" duration="482000" />
     </task>
     <servers />
   </component>
@@ -143,34 +145,34 @@
     </state>
     <state x="156" y="38" width="1198" height="797" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317765861" />
     <state x="1977" y="239" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316336062" />
-    <state width="804" height="231" key="GridCell.Tab.0.bottom" timestamp="1604317532014">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="558" height="270" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119702" />
-    <state width="804" height="231" key="GridCell.Tab.0.bottom/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532014" />
-    <state width="1398" height="231" key="GridCell.Tab.0.bottom/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321499" />
-    <state width="804" height="231" key="GridCell.Tab.0.center" timestamp="1604317532013">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="558" height="270" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119701" />
-    <state width="804" height="231" key="GridCell.Tab.0.center/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
-    <state width="1398" height="231" key="GridCell.Tab.0.center/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321498" />
-    <state width="804" height="231" key="GridCell.Tab.0.left" timestamp="1604317532013">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="558" height="270" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119701" />
-    <state width="804" height="231" key="GridCell.Tab.0.left/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
-    <state width="1398" height="231" key="GridCell.Tab.0.left/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321498" />
-    <state width="804" height="231" key="GridCell.Tab.0.right" timestamp="1604317532013">
-      <screen x="0" y="23" width="1920" height="1057" />
-    </state>
-    <state width="558" height="270" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604315119702" />
-    <state width="804" height="231" key="GridCell.Tab.0.right/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
-    <state width="1398" height="231" key="GridCell.Tab.0.right/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321499" />
-    <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size" timestamp="1604313836535">
+    <state width="558" height="270" key="GridCell.Tab.0.bottom" timestamp="1604393674552">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
-    <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604313836535" />
+    <state width="558" height="270" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604393674552" />
+    <state width="804" height="231" key="GridCell.Tab.0.bottom/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532014" />
+    <state width="1398" height="231" key="GridCell.Tab.0.bottom/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321499" />
+    <state width="558" height="270" key="GridCell.Tab.0.center" timestamp="1604393674549">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="558" height="270" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604393674549" />
+    <state width="804" height="231" key="GridCell.Tab.0.center/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
+    <state width="1398" height="231" key="GridCell.Tab.0.center/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321498" />
+    <state width="558" height="270" key="GridCell.Tab.0.left" timestamp="1604393674548">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="558" height="270" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604393674548" />
+    <state width="804" height="231" key="GridCell.Tab.0.left/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
+    <state width="1398" height="231" key="GridCell.Tab.0.left/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321498" />
+    <state width="558" height="270" key="GridCell.Tab.0.right" timestamp="1604393674551">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state width="558" height="270" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604393674551" />
+    <state width="804" height="231" key="GridCell.Tab.0.right/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
+    <state width="1398" height="231" key="GridCell.Tab.0.right/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321499" />
+    <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size" timestamp="1604391339728">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604391339728" />
     <state x="2141" y="280" key="SettingsEditor" timestamp="1604327121754">
       <screen x="1920" y="203" width="1440" height="877" />
     </state>

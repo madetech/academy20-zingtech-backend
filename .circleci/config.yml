@@ -31,6 +31,9 @@ jobs:
           command: 
             dotnet build
       - run:
-          name: Run app
-          command: 
-            dotnet run --project academy20-zingtech-backend
+          name: Run Tests
+          command: dotnet test
+#      - run:
+#          name: Run app
+#          command: 
+#            dotnet run --project academy20-zingtech-backend
