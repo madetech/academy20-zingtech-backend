@@ -11,6 +11,7 @@ workflows:
         - deploy: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
             requires:
               - build
+        - heroku/push-docker-image
 #          filters:
 #            branches:
 #              only: sequential-branch-filter
@@ -22,7 +23,7 @@ jobs:
     steps:
       - setup_remote_docker:
           version: 19.03.13
-      - heroku/push-docker-image
+      
     
   build:
     docker:
