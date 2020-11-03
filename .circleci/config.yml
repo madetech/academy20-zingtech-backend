@@ -7,7 +7,7 @@ workflows:
     heroku_deploy:
       jobs:
         - build
-        - push-docker-image: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+        - heroku/push-docker-image: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
             requires:
               - build
 #          filters:
@@ -37,3 +37,14 @@ jobs:
 #          name: Run app
 #          command: 
 #            dotnet run --project academy20-zingtech-backend
+#  deploy-dev:
+#    machine: true
+#    steps:
+#      - checkout
+#      - run:
+#          name: Build and push Docker image to Heroku
+#          command: |
+#            sudo curl https://cli-assets.heroku.com/install.sh | sh
+#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a academy20-zingtech-backend web
+#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a academy20-zingtech-backend web
