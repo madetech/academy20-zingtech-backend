@@ -17,9 +17,17 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="EmployeeDataController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="Dockerfile" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20201103113031_initial.cs" t="Include" />
+          <e p="20201103113031_initial.Designer.cs" t="Include" />
+          <e p="20201103114252_changedTableName.cs" t="Include" />
+          <e p="20201103114252_changedTableName.Designer.cs" t="Include" />
+          <e p="EmployeeDatumContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="EmployeeDatum.cs" t="Include" />
           <e p="EmployeeDatumContext.cs" t="Include" />

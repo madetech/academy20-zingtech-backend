@@ -9,7 +9,7 @@ namespace academy20_zingtech_backend.Models
         {
             
         }       
-        public DbSet<EmployeeDatum> TodoItems { get; set; }     
+        public DbSet<EmployeeDatum> EmployeeData { get; set; }     
   
     } 
 }

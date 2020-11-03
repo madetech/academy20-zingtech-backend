@@ -9,12 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/EmployeeDataController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Migrations/EmployeeDatumContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Migrations/EmployeeDatumContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +29,10 @@
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" />
-        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" />
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" />
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/EmployeeDataController.cs" />
       </list>
     </option>
   </component>
@@ -48,13 +48,16 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Docker.academy20-zingtech-backend/Dockerfile">
+  <component name="RunManager" selected=".NET Launch Settings Profile.academy20-zingtech-backend: academy20_zingtech_backend">
     <configuration name="academy20-zingtech-backend: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/academy20-zingtech-backend/academy20-zingtech-backend.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v3.1" />
@@ -128,7 +131,7 @@
       <updated>1604313034997</updated>
       <workItem from="1604313040447" duration="2824000" />
       <workItem from="1604393727716" duration="3157000" />
-      <workItem from="1604401591920" duration="1173000" />
+      <workItem from="1604401591920" duration="2831000" />
     </task>
     <servers />
   </component>
