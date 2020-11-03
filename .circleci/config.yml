@@ -8,9 +8,7 @@ workflows:
     heroku_deploy:
       jobs:
         - build
-        - docker/setup_remote_docker:
-            version: 19.03.13
-        - heroku/push-docker-image: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+        - deploy: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
             requires:
               - build
 #          filters:
@@ -18,6 +16,12 @@ workflows:
 #              only: sequential-branch-filter
 
 jobs:
+  deploy:
+    steps:
+      - docker/setup_remote_docker:
+          version: 19.03.13
+      - heroku/push-docker-image
+    
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1
