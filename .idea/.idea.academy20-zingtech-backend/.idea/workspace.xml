@@ -8,7 +8,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="" />
+    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,11 +29,17 @@
       <list>
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1jjMQs3iEz1nYyWkkY2jkIA2OSF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,6 +48,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -113,6 +128,7 @@
       <updated>1604313034997</updated>
       <workItem from="1604313040447" duration="2824000" />
       <workItem from="1604393727716" duration="3157000" />
+      <workItem from="1604401591920" duration="1173000" />
     </task>
     <servers />
   </component>
