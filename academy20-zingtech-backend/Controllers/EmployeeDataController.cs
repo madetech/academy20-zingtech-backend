@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic; 
 using System.Linq; 
 using academy20_zingtech_backend.Models;
+using System.Threading.Tasks;
 
 namespace academy20_zingtech_backend.Controllers
 {
@@ -34,6 +35,15 @@ namespace academy20_zingtech_backend.Controllers
                 return NotFound();     
             }     
             return item; 
+        }
+        [HttpPost]
+        public async Task<ActionResult<EmployeeDatum>> PostEmployeeDatum(EmployeeDatum employeeDatum)
+        {
+            _context.EmployeeData.Add(employeeDatum);
+            await _context.SaveChangesAsync();
+
+            //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
+            return CreatedAtAction(nameof(GetById), new { id = employeeDatum.Id }, employeeDatum);
         }
     }
     
