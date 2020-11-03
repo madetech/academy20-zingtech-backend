@@ -5,7 +5,7 @@ namespace academy20_zingtech_backend.Models
 {
     public class EmployeeDatumContext : DbContext     
     {         
-        public EmployeeDatumContext(DbContextOptions<EmployeeDatum> options) : base(options)         
+        public EmployeeDatumContext(DbContextOptions<EmployeeDatumContext> options) : base(options)         
         {
             
         }       
