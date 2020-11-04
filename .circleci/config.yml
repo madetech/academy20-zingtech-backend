@@ -3,12 +3,13 @@ version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.3 # Invoke the Heroku orb
   docker: circleci/docker@1.5.0
+  deploy-to-heroku: betterdoc/deploy-to-heroku@4.2.0
 
 workflows:
     heroku_deploy:
       jobs:
         - build
-        - deploy-dev: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+        - deploy-to-heroku/docker-build-release: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
             requires:
               - build
 #        - heroku/push-docker-image:
@@ -20,19 +21,18 @@ workflows:
 #              only: sequential-branch-filter
 
 jobs:
-  deploy-dev:
-    machine: true
-    steps:
-      - checkout
-      - run:
-          name: Build and push Docker image to Heroku
-          command: |
-            sudo curl https://cli-assets.heroku.com/install.sh | sh
-            heroku login -i --login HEROKU_LOGIN --password HEROKU_PASSWORD 
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login 
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zingtech-backend web
-            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zingtech-backend web
-
+#  deploy-dev:
+#    machine: true
+#    steps:
+#      - checkout
+#      - run:
+#          name: Build and push Docker image to Heroku
+#          command: |
+#            sudo curl https://cli-assets.heroku.com/install.sh | sh
+#            heroku login -i --login HEROKU_LOGIN --password HEROKU_PASSWORD 
+#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login 
+#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zingtech-backend web
+#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zingtech-backend web
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1
