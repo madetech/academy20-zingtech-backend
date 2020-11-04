@@ -45,7 +45,6 @@ jobs:
 #            heroku container:release web --app $HEROKU_APP_NAME
   deploy-dev:
     machine: true
-    working_directory: ./academy20-zingtech-backend
     steps:
       - checkout
       - run:
@@ -53,6 +52,8 @@ jobs:
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login 
+            pwd
+            ls
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a zingtech-backend web
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a zingtech-backend web
   build:
