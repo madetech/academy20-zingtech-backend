@@ -44,7 +44,7 @@ jobs:
 #          command: |
 #            heroku container:release web --app $HEROKU_APP_NAME
   deploy-dev:
-    working_directory: ~/home/circleci/project/academy20-zingtech-backend/academy20-zingtech-backend
+#    working_directory: ~/home/circleci/project/academy20-zingtech-backend/academy20-zingtech-backend
     machine: true
     steps:
       - checkout
@@ -53,6 +53,7 @@ jobs:
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login 
+            cd academy20-zingtech-backend
             pwd
             ls
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a zingtech-backend web
