@@ -45,6 +45,7 @@ jobs:
 #            heroku container:release web --app $HEROKU_APP_NAME
   deploy-dev:
     machine: true
+    working_directory: ./academy20-zingtech-backend
     steps:
       - checkout
       - run:
