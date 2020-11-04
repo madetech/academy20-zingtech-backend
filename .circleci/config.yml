@@ -28,7 +28,7 @@ jobs:
           name: Build and push Docker image to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
-            heroku --login HEROKU_LOGIN --password HEROKU_PASSWORD 
+            heroku login --login HEROKU_LOGIN --password HEROKU_PASSWORD 
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login 
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zingtech-backend web
             HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zingtech-backend web
