@@ -8,7 +8,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="" />
+    <list default="true" id="07f9327a-27a0-4204-8f0b-db3c107fdb71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.academy20-zingtech-backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/EmployeeDataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/EmployeeDataController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,13 +25,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" />
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatum.cs" />
-        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" />
-        <option value="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" />
         <option value="$PROJECT_DIR$/academy20-zingtech-backend/Models/EmployeeDatumContext.cs" />
-        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/EmployeeDataController.cs" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Dockerfile" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/appsettings.json" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Startup.cs" />
+        <option value="$PROJECT_DIR$/academy20-zingtech-backend/Controllers/EmployeeDataController.cs" />
       </list>
     </option>
   </component>
@@ -126,6 +131,8 @@
       <workItem from="1604313040447" duration="2824000" />
       <workItem from="1604393727716" duration="3157000" />
       <workItem from="1604401591920" duration="3092000" />
+      <workItem from="1604417686365" duration="3294000" />
+      <workItem from="1604484848351" duration="4395000" />
     </task>
     <servers />
   </component>
@@ -155,32 +162,32 @@
     </state>
     <state x="156" y="38" width="1198" height="797" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317765861" />
     <state x="1977" y="239" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316336062" />
-    <state width="1733" height="253" key="GridCell.Tab.0.bottom" timestamp="1604411857470">
+    <state width="1079" height="255" key="GridCell.Tab.0.bottom" timestamp="1604432790773">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
     <state width="1485" height="290" key="GridCell.Tab.0.bottom/0.23.1440.877/-1120.-1417.2560.1417/1440.-855.1920.1057@1440.-855.1920.1057" timestamp="1604404809802" />
-    <state width="1733" height="253" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604411857470" />
+    <state width="1079" height="255" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604432790773" />
     <state width="804" height="231" key="GridCell.Tab.0.bottom/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532014" />
     <state width="1398" height="231" key="GridCell.Tab.0.bottom/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321499" />
-    <state width="1733" height="253" key="GridCell.Tab.0.center" timestamp="1604411857470">
+    <state width="1079" height="255" key="GridCell.Tab.0.center" timestamp="1604432790773">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
     <state width="1485" height="290" key="GridCell.Tab.0.center/0.23.1440.877/-1120.-1417.2560.1417/1440.-855.1920.1057@1440.-855.1920.1057" timestamp="1604404809801" />
-    <state width="1733" height="253" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604411857470" />
+    <state width="1079" height="255" key="GridCell.Tab.0.center/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604432790773" />
     <state width="804" height="231" key="GridCell.Tab.0.center/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
     <state width="1398" height="231" key="GridCell.Tab.0.center/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321498" />
-    <state width="1733" height="253" key="GridCell.Tab.0.left" timestamp="1604411857469">
+    <state width="1079" height="255" key="GridCell.Tab.0.left" timestamp="1604432790772">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
     <state width="1485" height="290" key="GridCell.Tab.0.left/0.23.1440.877/-1120.-1417.2560.1417/1440.-855.1920.1057@1440.-855.1920.1057" timestamp="1604404809800" />
-    <state width="1733" height="253" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604411857469" />
+    <state width="1079" height="255" key="GridCell.Tab.0.left/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604432790772" />
     <state width="804" height="231" key="GridCell.Tab.0.left/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
     <state width="1398" height="231" key="GridCell.Tab.0.left/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321498" />
-    <state width="1733" height="253" key="GridCell.Tab.0.right" timestamp="1604411857470">
+    <state width="1079" height="255" key="GridCell.Tab.0.right" timestamp="1604432790773">
       <screen x="1440" y="-58" width="1920" height="1057" />
     </state>
     <state width="1485" height="290" key="GridCell.Tab.0.right/0.23.1440.877/-1120.-1417.2560.1417/1440.-855.1920.1057@1440.-855.1920.1057" timestamp="1604404809801" />
-    <state width="1733" height="253" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604411857470" />
+    <state width="1079" height="255" key="GridCell.Tab.0.right/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604432790773" />
     <state width="804" height="231" key="GridCell.Tab.0.right/1920.203.1440.877/0.23.1920.1057@0.23.1920.1057" timestamp="1604317532013" />
     <state width="1398" height="231" key="GridCell.Tab.0.right/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604316321499" />
     <state x="2190" y="214" key="Rider.ProjectTemplateDialog.Size" timestamp="1604396724008">
@@ -191,6 +198,10 @@
       <screen x="1920" y="203" width="1440" height="877" />
     </state>
     <state x="2141" y="280" key="SettingsEditor/1920.203.1440.877/0.23.1920.1057@1920.203.1440.877" timestamp="1604327121754" />
+    <state x="2505" y="190" width="540" height="524" key="StructurePopup" timestamp="1604420332358">
+      <screen x="1440" y="-58" width="1920" height="1057" />
+    </state>
+    <state x="2505" y="190" width="540" height="524" key="StructurePopup/0.23.1440.877/1440.-58.1920.1057@1440.-58.1920.1057" timestamp="1604420332358" />
     <state x="765" y="340" width="534" height="218" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1604317754823">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

@@ -8,26 +8,30 @@ workflows:
     heroku_deploy:
       jobs:
         - build
-        - deploy: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+        - deploy-dev: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
             requires:
               - build
-        - heroku/push-docker-image:
-            requires:
-              - build
-              - deploy
+#        - heroku/push-docker-image:
+#            requires:
+#              - build
+#              - deploy
 #          filters:
 #            branches:
 #              only: sequential-branch-filter
 
 jobs:
-  deploy:
-    docker:
-      - image: mcr.microsoft.com/dotnet/core/sdk:3.1
+  deploy-dev:
+    machine: true
     steps:
-      - setup_remote_docker:
-          version: 19.03.13
-      
-    
+      - checkout
+      - run:
+          name: Build and push Docker image to Heroku
+          command: |
+            sudo curl https://cli-assets.heroku.com/install.sh | sh
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zingtech-backend web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zingtech-backend web
+
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1

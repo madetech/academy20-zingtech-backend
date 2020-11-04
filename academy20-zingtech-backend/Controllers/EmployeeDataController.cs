@@ -45,6 +45,22 @@ namespace academy20_zingtech_backend.Controllers
             //return CreatedAtAction("GetTodoItem", new { id = todoItem.Id }, todoItem);
             return CreatedAtAction(nameof(GetById), new { id = employeeDatum.Id }, employeeDatum);
         }
+        
+        // DELETE: api/TodoItems/5
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<EmployeeDatum>> DeleteEmployeeDatum(long id)
+        {
+            var employeeDatum  = await _context.EmployeeData.FindAsync(id);
+            if (employeeDatum == null)
+            {
+                return NotFound();
+            }
+
+            _context.EmployeeData.Remove(employeeDatum);
+            await _context.SaveChangesAsync();
+
+            return employeeDatum;
+        }
     }
     
     
