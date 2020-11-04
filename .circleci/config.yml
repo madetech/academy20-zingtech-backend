@@ -11,14 +11,14 @@ workflows:
         - build
         - deploy:
             requires:
-              -build
+              - build
 #        - deploy-to-heroku/docker-build-release: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
 #            app-name: zingtech-backend
 #            requires:
 #              - build
 #        - heroku/push-docker-image:
 #            requires:
-#              - buildß
+#              - build
 #              - deploy
 #          filters:
 #            branches:
