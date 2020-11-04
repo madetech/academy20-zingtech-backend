@@ -45,6 +45,7 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="setup-heroku.sh" t="Include" />
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
       </e>
