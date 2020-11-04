@@ -9,7 +9,7 @@ workflows:
     heroku_deploy:
       jobs:
         - build
-        - deploy:
+        - deploy-dev:
             requires:
               - build
 #        - deploy-to-heroku/docker-build-release: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
@@ -25,36 +25,35 @@ workflows:
 #              only: sequential-branch-filter
 
 jobs:
-  deploy:
-    machine: true
-    steps:
-      - checkout
-    # deploy the image
-      - run: |
-          docker login -username=$HEROKU_USERNAME --password=$HEROKU_API_KEY registry.heroku.com 6
-          docker tag aspnetapp registry.heroku.com/$HEROKU_APP_NAME/web
-          docker push registry.heroku.com/$HEROKU_APP_NAME/web
-      - run:
-          name: Setup Heroku
-          command: |
-            chmod +x .circleci/setup-heroku.sh
-            .circleci/setup-heroku.sh
-      - run:
-          name: Deploy to Heroku
-          command: |
-            heroku container:release web --app $HEROKU_APP_NAME
-#  deploy-dev:
+#  deploy:
 #    machine: true
 #    steps:
 #      - checkout
+#    # deploy the image
+#      - run: |
+#          docker login -username=$HEROKU_USERNAME --password=$HEROKU_API_KEY registry.heroku.com 6
+#          docker tag aspnetapp registry.heroku.com/$HEROKU_APP_NAME/web
+#          docker push registry.heroku.com/$HEROKU_APP_NAME/web
 #      - run:
-#          name: Build and push Docker image to Heroku
+#          name: Setup Heroku
 #          command: |
-#            sudo curl https://cli-assets.heroku.com/install.sh | sh
-#            heroku login -i --login HEROKU_LOGIN --password HEROKU_PASSWORD 
-#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login 
-#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zingtech-backend web
-#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zingtech-backend web
+#            chmod +x .circleci/setup-heroku.sh
+#            .circleci/setup-heroku.sh
+#      - run:
+#          name: Deploy to Heroku
+#          command: |
+#            heroku container:release web --app $HEROKU_APP_NAME
+  deploy-dev:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build and push Docker image to Heroku
+          command: |
+            sudo curl https://cli-assets.heroku.com/install.sh | sh
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login 
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a zingtech-backend web
+            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a zingtech-backend web
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1
