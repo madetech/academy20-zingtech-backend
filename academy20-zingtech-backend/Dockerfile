@@ -19,4 +19,5 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 #.dll IS the binarys - dynamic libraries 
-ENTRYPOINT ["dotnet", "academy20-zingtech-backend.dll"]
+#ENTRYPOINT ["dotnet", "academy20-zingtech-backend.dll"]
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet academy20-zingtech-backend.dll
