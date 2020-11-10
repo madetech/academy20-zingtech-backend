@@ -1,23 +1,23 @@
-# TEMPORARY BASE
-# Define Base 
+### Build image, can be executed with `docker build --target build ...`
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
-WORKDIR /app
-#Copy source files 
+WORKDIR /app 
 COPY *.csproj ./
-#Fetching dependencies and building
 RUN dotnet restore academy20-zingtech-backend.csproj
+RUN dotnet tool restore 
 COPY . ./
 RUN dotnet publish academy20-zingtech-backend.csproj -c Release -o out
-# ***** Now we have an artifact or binary *****
 
-# PERMANENT BASE
-# Define new base - .NET runtime
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+# Called only if the build image is targeted with --target
+CMD ASPNETCORE_URLS=http://*:$PORT dotnet watch out/academy20-zingtech-backend.dll
+# CMD ASPNETCORE_URLS=http://*:$PORT dotnet out/academy20-zingtech-backend.dll
+
+### Production image
+# ASP.NET image containing runtime only: no SDK in here
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS deploy
 WORKDIR /app
 
-# Copy binaries over from the previous image 
+# Only copy the compiled binaries: no tests or other code 
 COPY --from=build /app/out .
 
-#.dll IS the binarys - dynamic libraries 
-#ENTRYPOINT ["dotnet", "academy20-zingtech-backend.dll"]
+# Command to execute on `docker run ...`
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet academy20-zingtech-backend.dll
