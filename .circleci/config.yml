@@ -33,7 +33,7 @@ jobs:
     steps:
       - checkout
       - newman/newman-run:
-          collection: ./academy20-zingtech-backend/backend-tests/Test_Collections/Zing-Tech-Backend.postman_collection.json
+          collection: ./backend-tests/Test_Collections/Zing-Tech-Backend.postman_collection.json
 #  deploy:
 #    machine: true
 #    steps:
