@@ -10,23 +10,12 @@ workflows:
     heroku_deploy:
       jobs:
         - build
-        - newman-collection-run
-        - deploy-dev:
+        - newman-collection-run:
             requires:
               - build
+        - deploy-dev:
+            requires:
               - newman-collection-run
-#        - deploy-to-heroku/docker-build-release: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
-#            app-name: zingtech-backend
-#            requires:
-#              - build
-#        - heroku/push-docker-image:
-#            requires:
-#              - build
-#              - deploy
-#          filters:
-#            branches:
-#              only: sequential-branch-filter
-
 jobs:
   newman-collection-run:
     executor: newman/postman-newman-docker
@@ -34,26 +23,8 @@ jobs:
       - checkout
       - newman/newman-run:
           collection: ./backend-tests/Test_Collections/Zing-Tech-Backend.postman_collection.json
-#  deploy:
-#    machine: true
-#    steps:
-#      - checkout
-#    # deploy the image
-#      - run: |
-#          docker login -username=$HEROKU_USERNAME --password=$HEROKU_API_KEY registry.heroku.com 6
-#          docker tag aspnetapp registry.heroku.com/$HEROKU_APP_NAME/web
-#          docker push registry.heroku.com/$HEROKU_APP_NAME/web
-#      - run:
-#          name: Setup Heroku
-#          command: |
-#            chmod +x .circleci/setup-heroku.sh
-#            .circleci/setup-heroku.sh
-#      - run:
-#          name: Deploy to Heroku
-#          command: |
-#            heroku container:release web --app $HEROKU_APP_NAME
+          
   deploy-dev:
-#    working_directory: ~/home/circleci/project/academy20-zingtech-backend/academy20-zingtech-backend
     machine: true
     steps:
       - checkout
@@ -70,7 +41,6 @@ jobs:
   build:
     docker:
       - image: mcr.microsoft.com/dotnet/core/sdk:3.1
-#    working_directory: ~/academy20-zingtech-backend/academy20-zingtech-backend
     steps:
       - checkout
       # Bundle install dependencies
@@ -85,18 +55,3 @@ jobs:
       - run:
           name: Run Tests
           command: dotnet test
-#      - run:
-#          name: Run app
-#          command: 
-#            dotnet run --project academy20-zingtech-backend
-#  deploy-dev:
-#    machine: true
-#    steps:
-#      - checkout
-#      - run:
-#          name: Build and push Docker image to Heroku
-#          command: |
-#            sudo curl https://cli-assets.heroku.com/install.sh | sh
-#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a academy20-zingtech-backend web
-#            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a academy20-zingtech-backend web
