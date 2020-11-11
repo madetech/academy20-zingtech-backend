@@ -14,7 +14,7 @@ workflows:
         - deploy-dev:
             requires:
               - build
-              - -newman-collection-run
+              - newman-collection-run
 #        - deploy-to-heroku/docker-build-release: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
 #            app-name: zingtech-backend
 #            requires:
