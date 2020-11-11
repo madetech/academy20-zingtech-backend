@@ -17,6 +17,8 @@ jobs:
     docker: 
       - image: cimg/node:15.2.0
     steps:
+      - setup_remote_docker:
+          version: 19.03.13
       - checkout
       - run:
           name: Start API + database containers
