@@ -9,22 +9,36 @@ orbs:
 workflows:
     heroku_deploy:
       jobs:
-        - build
-        - newman-collection-run:
+        - test
+        - deploy:
             requires:
-              - build
-        - deploy-dev:
-            requires:
-              - newman-collection-run
+              - test
 jobs:
-  newman-collection-run:
-    executor: newman/postman-newman-docker
+  test:
+    docker: 
+      - image: circleci/docker@1.5.0-node
     steps:
       - checkout
-      - newman/newman-run:
-          collection: ./backend-tests/Test_Collections/Zing-Tech-Backend.postman_collection.json
-          
-  deploy-dev:
+      - run:
+          name: Start API + database containers
+          command: |
+            docker-compose up -d
+            docker-compose exec api dotnet dotnet-ef database update
+      - run:
+          name: Set up Newman for testing
+          command: |
+            npm install
+      - run:
+          name: Execute integration tests with Newman
+          command: npm exec newman run backend-tests/integration/*.postman_collection.json
+      - run:
+          name: Bring down API and database containers
+          command: docker-compose down
+      - run: 
+          name: Execute unit tests with NUnit
+          command: |
+            docker-compose exec api dotnet test
+  deploy:
     machine: true
     steps:
       - checkout
@@ -34,24 +48,5 @@ jobs:
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login 
             cd academy20-zingtech-backend
-            pwd
-            ls
-            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a zingtech-backend web
+            HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a zingtech-backend web 
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a zingtech-backend web
-  build:
-    docker:
-      - image: mcr.microsoft.com/dotnet/core/sdk:3.1
-    steps:
-      - checkout
-      # Bundle install dependencies
-      - run:
-          name: Restore packages
-          command: 
-            dotnet restore
-      - run:
-          name: Build App
-          command: 
-            dotnet build
-      - run:
-          name: Run Tests
-          command: dotnet test
