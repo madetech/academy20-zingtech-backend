@@ -21,8 +21,7 @@ jobs:
       - run:
           name: Start API + database containers
           command: |
-            pwd
-            ls
+            cd academy20-zingtech-backend
             docker-compose up -d
             docker-compose exec api dotnet dotnet-ef database update
       - run:
