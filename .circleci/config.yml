@@ -4,14 +4,17 @@ orbs:
   heroku: circleci/heroku@1.2.3 # Invoke the Heroku orb
   docker: circleci/docker@1.5.0
   deploy-to-heroku: betterdoc/deploy-to-heroku@4.2.0
+  newman: postman/newman@0.0.2
 
 workflows:
     heroku_deploy:
       jobs:
         - build
+        - newman-collection-run
         - deploy-dev:
             requires:
               - build
+              - -newman-collection-run
 #        - deploy-to-heroku/docker-build-release: #heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
 #            app-name: zingtech-backend
 #            requires:
@@ -25,6 +28,12 @@ workflows:
 #              only: sequential-branch-filter
 
 jobs:
+  newman-collection-run:
+    executor: newman/postman-newman-docker
+    steps:
+      - checkout
+      - newman/newman-run:
+          collection: ./academy20-zingtech-backend/backend-tests/Test_Collections/Zing-Tech-Backend.postman_collection.json
 #  deploy:
 #    machine: true
 #    steps:
