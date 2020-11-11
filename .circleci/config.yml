@@ -36,7 +36,7 @@ jobs:
       - run:
           name: Waiting for the service-under-test to be ready
           command: |
-            for i in `seq 1 10`;
+            for i in `seq 1 1000`;
             do
               nc -z localhost 8080 && echo Success && exit 0
               echo -n .
