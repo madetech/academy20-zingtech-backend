@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Start API + database containers
           command: |
+            pwd
             docker-compose up -d
             docker-compose exec api dotnet dotnet-ef database update
       - run:
