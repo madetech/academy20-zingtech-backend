@@ -32,6 +32,7 @@ jobs:
           name: Set up Newman for testing
           command: |
             npm install
+            docker port academy20-zingtech-backend_api_1
       - run:
           name: Execute integration tests with Newman
           command: npm exec newman run backend-tests/integration/*.postman_collection.json
