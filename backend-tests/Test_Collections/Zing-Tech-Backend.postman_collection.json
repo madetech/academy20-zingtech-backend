@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "1e127584-938a-4379-8d2f-a80a8ef5eafa",
+		"name": "Zing-Tech-Backend",
+		"description": "Testing api requests for the zingtech backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"sdfg\",\n    \"email\": \"asdjfha\",\n    \"phoneNumber\": 1,\n    \"address\": \"sfdgsdfg\",\n    \"nextOfKin\": \"skjdfhs\",\n    \"salary\": 10,\n    \"position\": null,\n    \"officeLocation\": null,\n    \"manager\": null,\n    \"userType\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employeedata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employeedata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get request zingtech",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a87a9ee3-0b07-4600-9174-3c38d3e79505",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Testing the reposonse has the 2nd employee name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData[1].name).to.eql(\"sdfg\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employeedata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employeedata"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
