@@ -3,8 +3,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app 
 COPY *.csproj ./
 RUN dotnet restore academy20-zingtech-backend.csproj
-RUN dotnet tool restore 
 COPY . ./
+RUN dotnet tool restore 
 RUN dotnet publish academy20-zingtech-backend.csproj -c Release -o out
 
 # Called only if the build image is targeted with --target
