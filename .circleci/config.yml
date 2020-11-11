@@ -1,10 +1,9 @@
 version: 2.1
 
 orbs:
-  heroku: circleci/heroku@1.2.3 # Invoke the Heroku orb
-  docker: circleci/docker@1.5.0
+  heroku: circleci/heroku@1.2.3
+  docker: cimg/node@15.2.0
   deploy-to-heroku: betterdoc/deploy-to-heroku@4.2.0
-  newman: postman/newman@0.0.2
 
 workflows:
     heroku_deploy:
@@ -16,7 +15,7 @@ workflows:
 jobs:
   test:
     docker: 
-      - image: circleci/docker@1.5.0-node
+      - image: cimg/node:15.2.0
     steps:
       - checkout
       - run:
