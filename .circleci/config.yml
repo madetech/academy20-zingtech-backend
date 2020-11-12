@@ -24,7 +24,7 @@ jobs:
             PORT: 8080
           command: |
             cd academy20-zingtech-backend
-            docker-compose up --build
+            docker-compose up -d --build
             docker-compose exec api dotnet dotnet-ef database update
       - run: 
           name: Execute unit tests with NUnit
