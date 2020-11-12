@@ -6,12 +6,12 @@ orbs:
   deploy-to-heroku: betterdoc/deploy-to-heroku@4.2.0
 
 workflows:
-    heroku_deploy:
-      jobs:
-        - test
-        - deploy:
-            requires:
-              - test
+  heroku_deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
 jobs:
   test:
     machine:
@@ -36,6 +36,16 @@ jobs:
             for i in `seq 1 10`;
             do
               nc -z localhost 8080 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for API && exit 1
+      - run:
+          name: Waiting for the database to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z localhost 5432 && echo Success && exit 0
               echo -n .
               sleep 1
             done
