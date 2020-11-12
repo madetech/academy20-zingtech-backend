@@ -6,19 +6,17 @@ orbs:
   deploy-to-heroku: betterdoc/deploy-to-heroku@4.2.0
 
 workflows:
-    heroku_deploy:
-      jobs:
-        - test
-        - deploy:
-            requires:
-              - test
+  heroku_deploy:
+    jobs:
+      - test
+      - deploy:
+          requires:
+            - test
 jobs:
   test:
-    docker: 
-      - image: cimg/node:15.2.0
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
-      - setup_remote_docker:
-          version: 19.03.13
       - checkout
       - run:
           name: Start API + database containers
@@ -32,20 +30,29 @@ jobs:
           name: Set up Newman for testing
           command: |
             npm install
-            docker port academy20-zingtech-backend_api_1
       - run:
           name: Waiting for the service-under-test to be ready
           command: |
-            for i in `seq 1 1000`;
+            for i in `seq 1 10`;
             do
               nc -z localhost 8080 && echo Success && exit 0
+              echo -n .
+              sleep 1
+            done
+            echo Failed waiting for API && exit 1
+      - run:
+          name: Waiting for the database to be ready
+          command: |
+            for i in `seq 1 10`;
+            do
+              nc -z localhost 5432 && echo Success && exit 0
               echo -n .
               sleep 1
             done
             echo Failed waiting for Postgress && exit 1
       - run:
           name: Execute integration tests with Newman
-          command: npm exec newman run backend-tests/integration/*.postman_collection.json
+          command: npx newman run backend-tests/integration/*.postman_collection.json
       - run:
           name: Bring down API and database containers
           command: docker-compose down

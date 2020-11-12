@@ -1,15 +1,12 @@
 version: '3.7'
 
-volumes:
-  local_postgres_data: {}
-
 services:
   api: 
     build:
       context: .
       target: build
     ports:
-      - '8080:80'
+      - 8080:80
     depends_on:
       - db
   
@@ -18,5 +15,5 @@ services:
     environment:
       POSTGRES_DB: zing-back
       POSTGRES_PASSWORD: postgres
-    volumes:
-      - local_postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
