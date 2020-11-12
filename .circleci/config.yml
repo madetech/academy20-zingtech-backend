@@ -24,12 +24,17 @@ jobs:
             PORT: 8080
           command: |
             cd academy20-zingtech-backend
-            docker-compose up -d
+            docker-compose up --build
             docker-compose exec api dotnet dotnet-ef database update
+      - run: 
+          name: Execute unit tests with NUnit
+          command: |
+            docker-compose exec api cd ../ 
+            docker-compose exec api dotnet test
       - run:
           name: Set up Newman for testing
           command: |
-            npm install
+            npm install      
       - run:
           name: Waiting for the service-under-test to be ready
           command: |
@@ -53,10 +58,6 @@ jobs:
       - run:
           name: Execute integration tests with Newman
           command: npx newman run backend-tests/integration/*.postman_collection.json
-      - run: 
-          name: Execute unit tests with NUnit
-          command: |
-            docker-compose exec api dotnet test
   deploy:
     machine: true
     steps:
