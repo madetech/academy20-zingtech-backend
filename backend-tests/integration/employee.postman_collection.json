@@ -1,19 +1,33 @@
 {
 	"info": {
-		"_postman_id": "1e127584-938a-4379-8d2f-a80a8ef5eafa",
+		"_postman_id": "1dea5ca3-4451-4a33-b29c-ec7468f2c811",
 		"name": "Zing-Tech-Backend",
 		"description": "Testing api requests for the zingtech backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "post request",
+			"name": "Add new employee",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b1f1405-f2bb-4251-9edb-4d458700906f",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"sdfg\",\n    \"email\": \"asdjfha\",\n    \"phoneNumber\": 1,\n    \"address\": \"sfdgsdfg\",\n    \"nextOfKin\": \"skjdfhs\",\n    \"salary\": 10,\n    \"position\": null,\n    \"officeLocation\": null,\n    \"manager\": null,\n    \"userType\": null\n}",
+					"raw": "{\n    \"firstName\": \"Hinze\",\n    \"lastName\": \"Lamblin\",\n    \"email\": \"hlamblin0@arstechnica.com\",\n    \"mobileNumber\": \"919-399-0018\",\n    \"address\": \"040 Namekagon Place\",\n    \"city\": \"Alingsås\",\n    \"postcode\": \"441 92\",\n    \"nextOfKinName\": \"Sandmint\",\n    \"nextOfKinContactNumber\": \"874-538-3698\",\n    \"salaryBand\": 4,\n    \"officeLocation \": \"Sweden\",\n    \"position\": \"Help Desk Technician\",\n    \"userType\": \"employee\",\n    \"manager\": 10001\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,17 +55,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a87a9ee3-0b07-4600-9174-3c38d3e79505",
+						"id": "0d0ee4b4-ccfe-4918-88cd-f81b91c05048",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"});",
-							"",
-							"pm.test(\"Testing the reposonse has the 2nd employee name\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData[1].name).to.eql(\"sdfg\");",
-							"});",
-							""
+							"});"
 						],
 						"type": "text/javascript"
 					}
