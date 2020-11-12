@@ -9,8 +9,8 @@ using academy20_zingtech_backend.Models;
 namespace academy20_zingtech_backend.Migrations
 {
     [DbContext(typeof(EmployeeDatumContext))]
-    [Migration("20201103122454_cg-update")]
-    partial class cgupdate
+    [Migration("20201112161110_Setup")]
+    partial class Setup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,37 +22,49 @@ namespace academy20_zingtech_backend.Migrations
 
             modelBuilder.Entity("academy20_zingtech_backend.Models.EmployeeDatum", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
+                        .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
+                    b.Property<string>("City")
+                        .HasColumnType("text");
+
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<string>("Manager")
+                    b.Property<string>("FirstName")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("LastName")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Manager")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("MobileNumber")
                         .HasColumnType("text");
 
                     b.Property<string>("NextOfKin")
                         .HasColumnType("text");
 
-                    b.Property<string>("OfficeLocation")
+                    b.Property<string>("NextOfKinContactNumber")
                         .HasColumnType("text");
 
-                    b.Property<long>("PhoneNumber")
-                        .HasColumnType("bigint");
+                    b.Property<string>("OfficeLocation")
+                        .HasColumnType("text");
 
                     b.Property<string>("Position")
                         .HasColumnType("text");
 
-                    b.Property<float>("Salary")
-                        .HasColumnType("real");
+                    b.Property<string>("Postcode")
+                        .HasColumnType("text");
+
+                    b.Property<int>("SalaryBand")
+                        .HasColumnType("integer");
 
                     b.Property<string>("UserType")
                         .HasColumnType("text");
