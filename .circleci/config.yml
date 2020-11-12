@@ -14,8 +14,8 @@ workflows:
               - test
 jobs:
   test:
-    docker: 
-      - image: cimg/node:15.2.0
+    machine:
+      image: ubuntu-2004:202010-01
     steps:
       - setup_remote_docker:
           version: 19.03.13
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: Waiting for the service-under-test to be ready
           command: |
-            for i in `seq 1 1000`;
+            for i in `seq 1 10`;
             do
               nc -z localhost 8080 && echo Success && exit 0
               echo -n .
