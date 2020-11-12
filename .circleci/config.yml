@@ -66,6 +66,5 @@ jobs:
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:login 
-            cd academy20-zingtech-backend
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:push -a zingtech-backend web 
             HEROKU_API_KEY=${HEROKU_API_KEY} heroku container:release -a zingtech-backend web
