@@ -17,8 +17,6 @@ jobs:
     machine:
       image: ubuntu-2004:202010-01
     steps:
-      - setup_remote_docker:
-          version: 19.03.13
       - checkout
       - run:
           name: Start API + database containers
