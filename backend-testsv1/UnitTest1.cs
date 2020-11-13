@@ -1,11 +1,12 @@
-using System;
 using Xunit;
 
-namespace UnitTests
+namespace backend_testsv1
 {
-    public class UnitTest1
+    public class Tests
     {
-        [Fact]
+        
+
+    [Fact]
         public void Test1()
         {
             Assert.True(true);

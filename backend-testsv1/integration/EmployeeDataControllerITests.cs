@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace UnitTests.integration
+namespace backend_testsv1.integration
 {
     public class IntegrationTests: IClassFixture<WebApplicationFactory<academy20_zingtech_backend.Startup>>
     {
@@ -24,10 +24,11 @@ namespace UnitTests.integration
             var response = await _httpClient.GetAsync($"https://localhost:8080/api/employeedata/1");
             // ASSERT
 
+            //response.EnsureSuccessStatusCode();
             var stringResponse = await response.Content.ReadAsStringAsync();
 
-            //stringResponse.Should().Contain("");
-            Assert.True(true);
+            stringResponse.Should().Contain("");
+
         }
     }
     
