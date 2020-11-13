@@ -27,7 +27,7 @@ namespace academy20_zingtech_backend.Controllers
             return _context.EmployeeData.ToList();
         }
         [HttpGet("{id}", Name = "GetTodo")]
-        public ActionResult<EmployeeDatum> GetById(long id)
+        public ActionResult<EmployeeDatum> GetById(int id)
         {
             var item = _context.EmployeeData.Find(id);
             if (item == null)
