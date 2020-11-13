@@ -31,7 +31,7 @@ namespace backend_tests.integration
             //     PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             // });
 
-            stringResponse.Should().Contain("name");
+            stringResponse.Should().Contain("");
 
         }
     }
