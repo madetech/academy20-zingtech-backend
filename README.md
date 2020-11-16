@@ -14,7 +14,15 @@
 
 3.  Perform the database migrations: `docker-compose exec api dotnet dotnet-ef database update`<sup>1</sup>
 
+These commands can be strung together: `docker-compose up -d --build && docker-compose exec api dotnet dotnet-ef database update`.
+
 4.  Access the API at `http://localhost:8080/api/<endpoint>` (e.g. `http://localhost:8080/api/employeedata`)
+
+5.  When you're finished with the service, you can bring the service down with `docker-compose down`.
+
+To bring the service down and back up again after you've made changes or to run new tests:
+
+`docker-compose down && docker-compose up -d --build && docker-compose exec api dotnet dotnet-ef database update`
 
 ## Running tests
 
