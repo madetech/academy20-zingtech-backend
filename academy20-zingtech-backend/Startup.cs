@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using academy20_zingtech_backend.Models;
 using Npgsql;
+using Microsoft.AspNetCore.Cors;
 
 namespace academy20_zingtech_backend
 {
@@ -67,6 +68,13 @@ namespace academy20_zingtech_backend
             );
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder.AllowAnyOrigin());
+            });
+
         }
         
         /*
