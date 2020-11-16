@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1dea5ca3-4451-4a33-b29c-ec7468f2c811",
+		"_postman_id": "95eca39d-9ff4-42f3-b8f7-d4a7b5b78654",
 		"name": "Zing-Tech-Backend",
 		"description": "Testing api requests for the zingtech backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0b1f1405-f2bb-4251-9edb-4d458700906f",
+						"id": "c48d36dd-8f78-4e36-8807-3048d57c6056",
 						"exec": [
 							"pm.test(\"Successful POST request\", function () {",
 							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
@@ -50,12 +50,12 @@
 			"response": []
 		},
 		{
-			"name": "Get request zingtech",
+			"name": "Get all employees",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "0d0ee4b4-ccfe-4918-88cd-f81b91c05048",
+						"id": "f36f0d6b-e4e0-49e6-97d5-44b50868b267",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -78,6 +78,40 @@
 					"path": [
 						"api",
 						"employeedata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all visits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a13f67cc-e8aa-4390-b44d-95edbba16cd8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/visitdata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"visitdata"
 					]
 				}
 			},
