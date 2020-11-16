@@ -34,7 +34,7 @@ To run integration tests:
 
 1.  Start the service (see [Setup](#Setup)).
 
-2.  Run the tests using [Newman](https://github.com/postmanlabs/newman): `npm exec newman run <project_root>/backend-tests/integration/*`
+2.  Run the tests using [Newman](https://github.com/postmanlabs/newman): `npx newman run backend-tests/integration/*.postman_collection.json`
 
 ## Footnotes
 
