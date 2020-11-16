@@ -10,6 +10,7 @@ namespace academy20_zingtech_backend.Models
             
         }       
         public DbSet<EmployeeDatum> EmployeeData { get; set; }     
+        public DbSet<VisitDatum> VisitData { get; set; }    
   
     } 
 }

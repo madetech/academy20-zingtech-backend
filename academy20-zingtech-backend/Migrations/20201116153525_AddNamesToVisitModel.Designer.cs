@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using academy20_zingtech_backend.Models;
@@ -9,9 +10,10 @@ using academy20_zingtech_backend.Models;
 namespace academy20_zingtech_backend.Migrations
 {
     [DbContext(typeof(EmployeeDatumContext))]
-    partial class EmployeeDatumContextModelSnapshot : ModelSnapshot
+    [Migration("20201116153525_AddNamesToVisitModel")]
+    partial class AddNamesToVisitModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
