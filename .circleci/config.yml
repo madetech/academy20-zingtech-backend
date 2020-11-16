@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  heroku: circleci/heroku@1.2.3 # Invoke the Heroku orb
+  heroku: circleci/heroku@1.2.3
   docker: circleci/docker@1.5.0
   deploy-to-heroku: betterdoc/deploy-to-heroku@4.2.0
 
@@ -26,7 +26,8 @@ jobs:
             cd academy20-zingtech-backend
             docker-compose up -d --build
             docker-compose exec api dotnet dotnet-ef database update
-      - run: 
+      - run:
+          # Run unit tests first because they're less expensive, fail fast etc.
           name: Execute unit tests with NUnit
           command: |
             docker-compose exec -w /app api dotnet test
@@ -62,6 +63,7 @@ jobs:
     steps:
       - checkout
       - run:
+          # NB - `heroku container:push` builds a container from the Dockerfile before pushing.  No prior build step reqiured.
           name: Build and push Docker image to Heroku
           command: |
             sudo curl https://cli-assets.heroku.com/install.sh | sh

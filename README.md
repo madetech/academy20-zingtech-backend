@@ -8,9 +8,9 @@
 
 ### Setup
 
-1.  Clone this repo and `cd` to the `academy20-zingtech-backend` project folder.
+1.  Clone this repo.
 
-2.  Run the service locally: `docker-compose up -d`.
+2.  Run the service locally: `docker-compose up -d --build`.
 
 3.  Perform the database migrations: `docker-compose exec api dotnet dotnet-ef database update`<sup>1</sup>
 
