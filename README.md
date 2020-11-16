@@ -22,6 +22,8 @@
 
 `Insert comments about our unit testing strategy here. How do we approach unit testing of this API so we're testing our business logic and not the ASP.NET framework?`
 
+1.  Run `dotnet test` to run unit tests.
+
 ### Integration tests
 
 We use [integration tests](https://martinfowler.com/articles/practical-test-pyramid.html#IntegrationTests) to mean tests that make HTTP requests to our service and then assert on the return value.
