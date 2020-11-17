@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "b2077e59-ac6a-47b8-948b-b8b7d47bfb85",
+		"name": "Zing-Tech_Backend-Visit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "VisitTests",
+			"item": [
+				{
+					"name": "Add new visit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0a20bae3-1d34-4dd5-8218-d0b5f9e1bffb",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});",
+									"",
+									"pm.test(\"POST request returns created visitor json\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.globals.set(\"created_visit_id\", responseJson.id);",
+									"    pm.expect(responseJson.firstName).to.eql(\"Hinze\");",
+									"    pm.expect(responseJson.lastName).to.eql(\"Lamblin\");",
+									"    pm.expect(responseJson.email).to.eql(\"hlamblin0@arstechnica.com\");",
+									"    pm.expect(responseJson.mobileNumber).to.eql(\"919-399-0018\");",
+									"    pm.expect(responseJson.officeLocation).to.eql(\"Sweden\");",
+									"    pm.expect(responseJson.host).to.eql(10001);",
+									"    pm.expect(responseJson.startDatetime).to.eql(\"2025-11-16T14:16:21+00:00\");",
+									"    pm.expect(responseJson.endDatetime).to.eql(\"2025-11-16T15:16:21+00:00\");",
+									"    pm.expect(responseJson.purpose).to.eql(\"Sales pitch\");",
+									"    pm.expect(responseJson.notes).to.eql(\"\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FirstName\": \"Hinze\",\n    \"LastName\": \"Lamblin\",\n    \"Email\": \"hlamblin0@arstechnica.com\",\n    \"MobileNumber\": \"919-399-0018\",\n    \"OfficeLocation\": \"Sweden\",\n    \"Host\": 10001,\n    \"StartDatetime\": \"2025-11-16T14:16:21+00:00\",\n    \"EndDatetime\": \"2025-11-16T15:16:21+00:00\",\n    \"Purpose\": \"Sales pitch\",\n    \"Notes\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all visits",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0a104746-ba22-42cf-ae76-2d0ce42aa8c7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Return contains created visit returned\", function () {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.data[2].firstName).to.eql(\"Hinze\");",
+									"    pm.expect(responseJson.data[2].lastName).to.eql(\"Lamblin\");",
+									"    pm.expect(responseJson.data[2].email).to.eql(\"hlamblin0@arstechnica.com\");",
+									"    pm.expect(responseJson.data[2].mobileNumber).to.eql(\"919-399-0018\");",
+									"    pm.expect(responseJson.data[2].officeLocation).to.eql(\"Sweden\");",
+									"    pm.expect(responseJson.data[2].host).to.eql(10001);",
+									"    pm.expect(responseJson.data[2].startDatetime).to.eql(\"2025-11-16T14:16:21\");",
+									"    pm.expect(responseJson.data[2].endDatetime).to.eql(\"2025-11-16T15:16:21\");",
+									"    pm.expect(responseJson.data[2].purpose).to.eql(\"Sales pitch\");",
+									"    pm.expect(responseJson.data[2].notes).to.eql(\"\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete created visit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046beebe-fb99-44bc-a728-b404b02aee87",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"",
+									"    pm.globals.set(\"deleted_visit_id\", pm.globals.get(\"created_visit_id\"));",
+									";",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata/{{created_visit_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata",
+								"{{created_visit_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check deleted visit not found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bcdf3bc9-0f7c-46ec-a9ed-d47bd493c25a",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata/{{deleted_visit_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata",
+								"{{deleted_visit_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

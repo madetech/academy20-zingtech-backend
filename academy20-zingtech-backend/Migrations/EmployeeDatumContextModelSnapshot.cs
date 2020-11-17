@@ -83,8 +83,8 @@ namespace academy20_zingtech_backend.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("EndDatetime")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("EndDatetime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
@@ -107,8 +107,8 @@ namespace academy20_zingtech_backend.Migrations
                     b.Property<string>("Purpose")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("StartDatetime")
-                        .HasColumnType("timestamp without time zone");
+                    b.Property<DateTimeOffset>("StartDatetime")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 

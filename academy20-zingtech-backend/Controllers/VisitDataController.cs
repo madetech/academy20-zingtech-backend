@@ -1,3 +1,4 @@
+using System.Collections;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,9 @@ namespace academy20_zingtech_backend.Controllers
         [HttpGet]
         public ActionResult<List<VisitDatum>> GetAll()
         {
-            return new EmptyResult();
-            //return _context.VisitData.ToList();
+            Hashtable result = new Hashtable();
+            result.Add("data", _context.VisitData.ToList());
+            return Ok(result);
         }
         
         [HttpGet("{id}", Name = "GetVisit")]
