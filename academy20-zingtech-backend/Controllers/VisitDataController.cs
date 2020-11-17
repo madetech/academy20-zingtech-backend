@@ -43,5 +43,20 @@ namespace academy20_zingtech_backend.Controllers
             
             return CreatedAtAction(nameof(GetById), new { id = visitDatum.Id }, visitDatum);
         }
+        
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<VisitDatum>> DeleteVisitDatum(int id)
+        {
+            var visitDatum = await _context.VisitData.FindAsync(id);
+            if (visitDatum == null)
+            {
+                return NotFound();
+            }
+
+            _context.VisitData.Remove(visitDatum);
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
     }
 }
