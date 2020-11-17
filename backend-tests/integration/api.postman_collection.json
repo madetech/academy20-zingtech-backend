@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "5ad08434-dab2-4d10-b364-e24f868e0318",
+		"name": "HMRC-HR API",
+		"description": "Testing api requests for the Visits end point of the HMRC-HR backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Visits",
+			"item": [
+				{
+					"name": "Add new visit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4dfece5-be12-4021-b264-662d55eac675",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});",
+									"",
+									"pm.test(\"POST request returns created visitor json\", () => {",
+									"    const responseJson = pm.response.json();",
+									"    pm.globals.set(\"created_visit_id\", responseJson.id);",
+									"    pm.expect(responseJson.firstName).to.eql(\"Hinze\");",
+									"    pm.expect(responseJson.lastName).to.eql(\"Lamblin\");",
+									"    pm.expect(responseJson.email).to.eql(\"hlamblin0@arstechnica.com\");",
+									"    pm.expect(responseJson.mobileNumber).to.eql(\"919-399-0018\");",
+									"    pm.expect(responseJson.officeLocation).to.eql(\"Sweden\");",
+									"    pm.expect(responseJson.host).to.eql(10001);",
+									"    pm.expect(responseJson.startDatetime).to.eql(\"2025-11-16T14:16:21+00:00\");",
+									"    pm.expect(responseJson.endDatetime).to.eql(\"2025-11-16T15:16:21+00:00\");",
+									"    pm.expect(responseJson.purpose).to.eql(\"Sales pitch\");",
+									"    pm.expect(responseJson.notes).to.eql(\"\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"FirstName\": \"Hinze\",\n    \"LastName\": \"Lamblin\",\n    \"Email\": \"hlamblin0@arstechnica.com\",\n    \"MobileNumber\": \"919-399-0018\",\n    \"OfficeLocation\": \"Sweden\",\n    \"Host\": 10001,\n    \"StartDatetime\": \"2025-11-16T14:16:21+00:00\",\n    \"EndDatetime\": \"2025-11-16T15:16:21+00:00\",\n    \"Purpose\": \"Sales pitch\",\n    \"Notes\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all visits",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "68bfea10-6ee2-4ed5-afc8-cadd03ab1050",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Return contains created visit returned\", function () {",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.data[2].firstName).to.eql(\"Hinze\");",
+									"    pm.expect(responseJson.data[2].lastName).to.eql(\"Lamblin\");",
+									"    pm.expect(responseJson.data[2].email).to.eql(\"hlamblin0@arstechnica.com\");",
+									"    pm.expect(responseJson.data[2].mobileNumber).to.eql(\"919-399-0018\");",
+									"    pm.expect(responseJson.data[2].officeLocation).to.eql(\"Sweden\");",
+									"    pm.expect(responseJson.data[2].host).to.eql(10001);",
+									"    pm.expect(responseJson.data[2].startDatetime).to.eql(\"2025-11-16T14:16:21\");",
+									"    pm.expect(responseJson.data[2].endDatetime).to.eql(\"2025-11-16T15:16:21\");",
+									"    pm.expect(responseJson.data[2].purpose).to.eql(\"Sales pitch\");",
+									"    pm.expect(responseJson.data[2].notes).to.eql(\"\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete created visit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e44db74c-4896-46b1-9d33-41a11112797b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"",
+									"    pm.globals.set(\"deleted_visit_id\", pm.globals.get(\"created_visit_id\"));",
+									";",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata/{{created_visit_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata",
+								"{{created_visit_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check deleted visit not found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b2014d0-4592-4db2-a862-25c584a28538",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/visitdata/{{deleted_visit_id}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"visitdata",
+								"{{deleted_visit_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Add new employee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2276ff01-da97-435e-b7a2-b3117199298e",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Hinze\",\n    \"lastName\": \"Lamblin\",\n    \"email\": \"hlamblin0@arstechnica.com\",\n    \"mobileNumber\": \"919-399-0018\",\n    \"address\": \"040 Namekagon Place\",\n    \"city\": \"Alingsås\",\n    \"postcode\": \"441 92\",\n    \"nextOfKinName\": \"Sandmint\",\n    \"nextOfKinContactNumber\": \"874-538-3698\",\n    \"salaryBand\": 4,\n    \"officeLocation \": \"Sweden\",\n    \"position\": \"Help Desk Technician\",\n    \"userType\": \"employee\",\n    \"manager\": 10001\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/employeedata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employeedata"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7be9bf7-4847-48db-a887-9418d8cbe90c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/employeedata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"employeedata"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6652dde6-27db-4bdf-b563-b56a0b1287f3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "81fb012d-5ca8-4630-8b47-5c91b5d780d8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
