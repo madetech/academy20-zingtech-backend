@@ -102,6 +102,8 @@ namespace academy20_zingtech_backend
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+            app.UseCors();
         }
     }
 }
