@@ -66,14 +66,16 @@ namespace academy20_zingtech_backend
             services.AddDbContext<EmployeeDatumContext>(opt =>
                 opt.UseNpgsql(connectionString)
             );
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddControllers();
-
+            
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
                     builder => builder.AllowAnyOrigin());
             });
+            
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddControllers();
+
 
         }
         
@@ -103,7 +105,7 @@ namespace academy20_zingtech_backend
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
-            app.UseCors();
+            app.UseCors("AllowAllOrigins");
         }
     }
 }
