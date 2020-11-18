@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -34,7 +35,27 @@ namespace academy20_zingtech_backend.Controllers
             {
                 return NotFound();
             }
-            return item;
+
+            var hostData = _context.EmployeeData.Find(item.Host);
+            Console.WriteLine(hostData);
+            Hashtable result = new Hashtable();
+            result.Add("hostFirstName", hostData.FirstName);
+            result.Add("hostLastName", hostData.LastName);
+            result.Add("hostEmail", hostData.Email);
+            result.Add("hostId", item.Host);
+            result.Add("visitorFirstName", item.FirstName);
+            result.Add("visitorLastName", item.LastName);
+            result.Add("visitStartDatetime", item.StartDatetime);
+            result.Add("visitEndDatetime", item.EndDatetime);
+            result.Add("visitEmail", item.Email);
+            result.Add("visitorMobileNumber", item.MobileNumber);
+            result.Add("visitOfficeLocation", item.OfficeLocation);
+            result.Add("visitPurpose", item.Purpose);
+            result.Add("visitNotes", item.Notes);
+            
+            
+            return Ok(result);
+            //first name, last name, email
         }
         
         [HttpPost]
