@@ -100,12 +100,14 @@ namespace academy20_zingtech_backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            
+            app.UseCors("AllowAllOrigins");
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
-            app.UseCors("AllowAllOrigins");
+            
         }
     }
 }
