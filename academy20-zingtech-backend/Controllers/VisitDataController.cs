@@ -39,6 +39,7 @@ namespace academy20_zingtech_backend.Controllers
             var hostData = _context.EmployeeData.Find(item.Host);
             Console.WriteLine(hostData);
             Hashtable result = new Hashtable();
+            result.Add("visitId", item.Id);
             result.Add("hostFirstName", hostData.FirstName);
             result.Add("hostLastName", hostData.LastName);
             result.Add("hostEmail", hostData.Email);
