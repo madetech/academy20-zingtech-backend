@@ -70,7 +70,7 @@ namespace academy20_zingtech_backend
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
-                    builder => builder.AllowAnyOrigin());
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
