@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using academy20_zingtech_backend.Models;
 using Npgsql;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace academy20_zingtech_backend
 {
@@ -52,16 +53,6 @@ namespace academy20_zingtech_backend
                 };
 
                 connectionString = builder.ToString();
-                /*//parse database URL. Format is postgres://<username>:<password>@<host>/<dbname>
-                var uri = new Uri(envVar);
-                var username = uri.UserInfo.Split(':')[0];
-                var password = uri.UserInfo.Split(':')[1];
-                connectionString = 
-                    "; Database=" + uri.AbsolutePath.Substring(1) +
-                    "; Username=" + username +
-                    "; Password=" + password + 
-                    "; Port=" + uri.Port +
-                    "; SSL Mode=Require; Trust Server Certificate=true;";*/
             }
             services.AddDbContext<EmployeeDatumContext>(opt =>
                 opt.UseNpgsql(connectionString)
@@ -73,21 +64,21 @@ namespace academy20_zingtech_backend
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
             
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = $"https://{Configuration["Auth0:Domain"]}/";
+                options.Audience = Configuration["Auth0:Audience"];
+            });
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddControllers();
 
 
         }
-        
-        /*
-        {
-            services.AddDbContext<EmployeeDatumContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddControllers();
-         }   
-        */
-        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -102,6 +93,8 @@ namespace academy20_zingtech_backend
             app.UseRouting();
             
             app.UseCors("AllowAllOrigins");
+            
+            app.UseAuthentication();
             
             app.UseAuthorization();
 
