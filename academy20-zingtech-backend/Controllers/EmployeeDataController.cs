@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using academy20_zingtech_backend.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace academy20_zingtech_backend.Controllers
 {
@@ -21,7 +22,9 @@ namespace academy20_zingtech_backend.Controllers
             //     _context.SaveChanges();
             // }
         }
+        
         [HttpGet]
+        [Authorize]
         public ActionResult<List<EmployeeDatum>> GetAll()
         {
             return _context.EmployeeData.ToList();
