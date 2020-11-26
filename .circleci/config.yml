@@ -58,7 +58,10 @@ jobs:
       - run:
           name: Execute integration tests with Newman
           command: |
-            VAR_TOKEN=${AUTH_TOKEN}
+            VAR_TOKEN=$(curl --request POST \
+              --url https://dev-agqzfv5q.eu.auth0.com/oauth/token \
+              --header 'content-type: application/json' \
+              --data '{"client_id":${CLINET_ID},"client_secret":${CLIENT_SECRET},"audience":${AUDIENCE},"grant_type":"client_credentials"}'|sed -n 's|.*"access_token":"\([^"]*\)".*|\1|p')
             npx newman run backend-tests/integration/*.postman_collection.json --env-var "token=$VAR_TOKEN"
   deploy:
     machine: true
