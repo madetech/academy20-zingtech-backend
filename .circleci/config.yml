@@ -58,8 +58,8 @@ jobs:
       - run:
           name: Execute integration tests with Newman
           command: |
-            echo ${AUTH_TOKEN}
-            npx newman run backend-tests/integration/*.postman_collection.json --env-var "token=$AUTH_TOKEN"
+            VAR_TOKEN = ${AUTH_TOKEN}
+            npx newman run backend-tests/integration/*.postman_collection.json --env-var "token=$VAR_TOKEN"
   deploy:
     machine: true
     steps:
