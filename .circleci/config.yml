@@ -57,7 +57,9 @@ jobs:
             echo Failed waiting for Postgress && exit 1
       - run:
           name: Execute integration tests with Newman
-          command: npx newman run backend-tests/integration/*.postman_collection.json --env-var "token="+$AUTH_TOKEN
+          command: |
+            echo ${AUTH_TOKEN}
+            npx newman run backend-tests/integration/*.postman_collection.json --env-var "token=$AUTH_TOKEN"
   deploy:
     machine: true
     steps:
